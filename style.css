@@ -1,1 +1,94 @@
-/* Add styles here */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --background-start: #6a11cb;
+  --background-end: #2575fc;
+  --text-color: #ffffff;
+  --button-bg: #ff4081;
+  --button-hover-bg: #f50057;
+  --container-bg: rgba(255, 255, 255, 0.1);
+  --font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background: linear-gradient(45deg, var(--background-start), var(--background-end));
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+}
+
+.container {
+  background: var(--container-bg);
+  padding: 3rem 4rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+#lotto-balls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  min-height: 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  font-family: var(--font-family);
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+  transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+lotto-ball {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  animation: appear 0.5s ease-out forwards;
+}
+
+@keyframes appear {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
