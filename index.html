@@ -1,32 +1,247 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-adsense-account" content="ca-pub-5083696875855041">
-  <title>Lotto Number Generator</title>
+  <meta name="description" content="로또 번호 생성기와 당첨 전략, 확률 분석, 역대 통계 정보를 제공하는 로또 전문 사이트입니다.">
+  <meta name="keywords" content="로또, 로또번호생성기, 로또당첨, 로또확률, 로또통계, 로또전략">
+  <meta name="author" content="ShowPang">
+  <meta property="og:title" content="ShowPang - 로또 번호 생성기 & 당첨 전략 가이드">
+  <meta property="og:description" content="무료 로또 번호 생성기와 당첨 확률 분석, 전략 가이드를 제공합니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sbk0674-web.github.io/showpang/">
+  <title>ShowPang - 로또 번호 생성기 & 당첨 전략 가이드</title>
   <link href='./style.css' rel='stylesheet'>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5083696875855041"
      crossorigin="anonymous"></script>
 </head>
 <body>
-  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
-  <div class="container">
-    <h1>Lotto Number Generator</h1>
-    <div id="lotto-balls" class="lotto-balls"></div>
-    <button id="generate-btn">Generate Numbers</button>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./" class="logo">ShowPang</a>
+      <nav class="main-nav">
+        <a href="#generator">번호생성</a>
+        <a href="#guide">전략가이드</a>
+        <a href="#statistics">확률분석</a>
+        <a href="#faq">FAQ</a>
+        <a href="./about.html">소개</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="테마 전환">🌙</button>
+    </div>
+  </header>
 
-    <hr class="divider" />
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>스마트한 로또 번호 생성기</h1>
+      <p class="hero-desc">확률 기반 분석과 전략으로 더 똑똑하게 로또를 즐기세요. 무료 번호 생성기와 당첨 가이드를 제공합니다.</p>
+    </section>
 
-    <h2>제휴 문의</h2>
-    <form id="contact-form" action="https://formspree.io/f/xpqjbrbv" method="POST">
-      <input type="text" name="name" placeholder="이름 / 회사명" required />
-      <input type="email" name="email" placeholder="이메일" required />
-      <textarea name="message" placeholder="문의 내용을 입력해주세요" rows="4" required></textarea>
-      <button type="submit" id="submit-btn">문의 보내기</button>
-    </form>
-    <p id="form-status" class="form-status"></p>
-  </div>
+    <!-- Generator Section -->
+    <section id="generator" class="section">
+      <div class="container">
+        <h2>로또 번호 생성기</h2>
+        <p class="section-desc">버튼을 클릭하면 1~45 중 랜덤으로 6개의 번호가 생성됩니다. 번호는 오름차순으로 정렬되며, 각 번호 범위에 따라 색상이 다르게 표시됩니다.</p>
+        <div id="lotto-balls" class="lotto-balls"></div>
+        <button id="generate-btn" class="btn-primary">번호 생성하기</button>
+        <div class="color-legend">
+          <span class="legend-item"><span class="dot" style="background:#fbc400"></span>1~10</span>
+          <span class="legend-item"><span class="dot" style="background:#69c8f2"></span>11~20</span>
+          <span class="legend-item"><span class="dot" style="background:#ff7272"></span>21~30</span>
+          <span class="legend-item"><span class="dot" style="background:#aaa"></span>31~40</span>
+          <span class="legend-item"><span class="dot" style="background:#b0d840"></span>41~45</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strategy Guide Section -->
+    <section id="guide" class="section section-alt">
+      <div class="container">
+        <h2>로또 당첨 전략 가이드</h2>
+        <p class="section-desc">로또는 순수한 확률 게임이지만, 알고 접근하면 더 재미있게 즐길 수 있습니다. 아래는 많은 로또 전문가들이 공유하는 전략입니다.</p>
+
+        <div class="card-grid">
+          <article class="card">
+            <h3>균형 잡힌 번호 선택</h3>
+            <p>낮은 번호(1~22)와 높은 번호(23~45)를 균형 있게 섞어 선택하세요. 통계적으로 당첨 번호는 한쪽에 치우치지 않는 경우가 많습니다. 예를 들어 3개는 낮은 번호, 3개는 높은 번호로 구성하면 균형 잡힌 조합이 됩니다.</p>
+          </article>
+
+          <article class="card">
+            <h3>홀짝 비율 맞추기</h3>
+            <p>역대 당첨 번호를 분석하면, 홀수와 짝수가 3:3 또는 4:2 비율로 나오는 경우가 전체의 약 70% 이상입니다. 모두 홀수이거나 모두 짝수인 조합은 당첨 확률이 매우 낮으니 적절히 섞는 것이 좋습니다.</p>
+          </article>
+
+          <article class="card">
+            <h3>연속 번호 활용</h3>
+            <p>당첨 번호에 연속된 숫자(예: 14, 15)가 포함되는 경우가 상당히 많습니다. 약 60% 이상의 당첨 조합에 최소 한 쌍의 연속 번호가 포함되어 있으니, 연속 번호 한두 쌍을 포함시키는 것도 하나의 전략입니다.</p>
+          </article>
+
+          <article class="card">
+            <h3>번호 합계 범위</h3>
+            <p>6개 번호의 합계가 100~180 사이인 경우가 전체 당첨의 약 70%를 차지합니다. 너무 작거나 너무 큰 합계는 당첨 확률이 낮습니다. 번호를 선택한 후 합계를 확인해보는 습관을 들이면 좋습니다.</p>
+          </article>
+
+          <article class="card">
+            <h3>과거 당첨 번호 분석</h3>
+            <p>최근 10~20회차의 당첨 번호를 확인하여 자주 나오는 번호(핫넘버)와 오래 나오지 않는 번호(콜드넘버)를 파악하세요. 핫넘버는 계속 나올 수 있고, 콜드넘버는 곧 나올 수 있다는 두 가지 관점이 있습니다.</p>
+          </article>
+
+          <article class="card">
+            <h3>꾸준한 참여</h3>
+            <p>로또 당첨은 결국 확률의 게임입니다. 한 번에 많은 금액을 투자하기보다, 매주 소액으로 꾸준히 참여하는 것이 더 현명한 접근법입니다. 즐거운 취미로 가볍게 즐기는 것이 가장 좋은 전략입니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="statistics" class="section">
+      <div class="container">
+        <h2>로또 확률 분석</h2>
+        <p class="section-desc">로또 6/45의 수학적 확률을 정확히 이해하면 보다 현실적인 기대를 갖고 게임을 즐길 수 있습니다.</p>
+
+        <div class="stats-table-wrap">
+          <table class="stats-table">
+            <thead>
+              <tr>
+                <th>등수</th>
+                <th>당첨 조건</th>
+                <th>확률</th>
+                <th>평균 당첨금</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1등</strong></td>
+                <td>6개 번호 모두 일치</td>
+                <td>1 / 8,145,060</td>
+                <td>약 20억 원</td>
+              </tr>
+              <tr>
+                <td><strong>2등</strong></td>
+                <td>5개 번호 + 보너스 번호 일치</td>
+                <td>1 / 1,357,510</td>
+                <td>약 5,000만 원</td>
+              </tr>
+              <tr>
+                <td><strong>3등</strong></td>
+                <td>5개 번호 일치</td>
+                <td>1 / 35,724</td>
+                <td>약 150만 원</td>
+              </tr>
+              <tr>
+                <td><strong>4등</strong></td>
+                <td>4개 번호 일치</td>
+                <td>1 / 733</td>
+                <td>고정 5만 원</td>
+              </tr>
+              <tr>
+                <td><strong>5등</strong></td>
+                <td>3개 번호 일치</td>
+                <td>1 / 45</td>
+                <td>고정 5천 원</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <h3>총 조합 수</h3>
+            <p>로또 6/45에서 가능한 모든 조합의 수는 <strong>8,145,060가지</strong>입니다. 이것은 45개의 숫자 중에서 6개를 선택하는 조합(45C6)으로 계산됩니다. 매주 1게임씩 구매한다면, 통계적으로 약 156,636년에 한 번 1등에 당첨되는 셈입니다.</p>
+          </article>
+
+          <article class="card">
+            <h3>기대값 분석</h3>
+            <p>로또 1게임(1,000원) 구매 시 수학적 기대값은 약 <strong>400~500원</strong> 수준입니다. 이는 판매액의 약 50%가 당첨금으로 배분되기 때문입니다. 나머지는 복권기금(공익사업), 판매수수료, 운영비 등으로 사용됩니다.</p>
+          </article>
+
+          <article class="card">
+            <h3>번호별 출현 빈도</h3>
+            <p>1,100회 이상의 추첨 데이터를 분석하면, 각 번호의 출현 빈도는 장기적으로 균등해지는 경향이 있습니다. 단기적으로는 편차가 있지만, 이는 통계적으로 자연스러운 현상이며 특정 번호가 유리하다는 근거는 없습니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section section-alt">
+      <div class="container">
+        <h2>자주 묻는 질문 (FAQ)</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>로또 번호 생성기는 어떤 원리로 작동하나요?</summary>
+            <p>저희 번호 생성기는 자바스크립트의 난수 생성 함수를 사용하여 1부터 45까지의 숫자 중 중복 없이 6개를 무작위로 선택합니다. 매번 완전히 새로운 조합이 생성되며, 이전 결과와는 무관하게 독립적으로 작동합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>특정 번호가 더 잘 나오는 건 사실인가요?</summary>
+            <p>단기적으로는 특정 번호가 더 자주 출현할 수 있지만, 이는 통계적 변동(분산)에 의한 자연스러운 현상입니다. 장기적으로 모든 번호의 출현 확률은 동일합니다. 로또 추첨기는 매회 독립적으로 작동하므로, 과거의 결과가 미래에 영향을 주지 않습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>로또 당첨금에 세금이 부과되나요?</summary>
+            <p>네, 로또 당첨금에는 세금이 부과됩니다. 5만 원 초과 ~ 3억 원 이하 당첨금에는 22%(소득세 20% + 주민세 2%)가, 3억 원 초과분에는 33%(소득세 30% + 주민세 3%)가 원천징수됩니다. 5등(5,000원)과 4등(50,000원)은 비과세입니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>당첨금 수령 방법은 어떻게 되나요?</summary>
+            <p>5등은 일반 로또 판매점에서, 4등은 농협 지점에서 수령 가능합니다. 3등은 지역 농협에서, 1~2등은 농협은행 본점에서 수령해야 합니다. 당첨금 지급 청구 기한은 추첨일로부터 1년이니, 반드시 기한 내에 수령하세요.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>매주 같은 번호를 고정하는 게 유리한가요?</summary>
+            <p>수학적으로 매주 같은 번호를 사용하는 것과 매주 새로운 번호를 사용하는 것의 당첨 확률은 완전히 동일합니다. 각 추첨은 독립 사건이므로, 이전 추첨 결과와 관계없이 모든 조합의 확률은 1/8,145,060으로 같습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>로또는 언제, 어디서 구매할 수 있나요?</summary>
+            <p>로또는 전국 로또 판매점에서 구매 가능하며, 동행복권 홈페이지(www.dhlottery.co.kr)에서 온라인으로도 구매할 수 있습니다. 판매 시간은 오전 6시부터 토요일 오후 8시까지이며, 추첨은 매주 토요일 오후 8시 45분에 진행됩니다.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container container-sm">
+        <h2>제휴 문의</h2>
+        <p class="section-desc">비즈니스 제휴, 광고 문의, 또는 사이트 관련 의견이 있으시면 아래 양식을 통해 연락해주세요. 빠른 시일 내에 답변 드리겠습니다.</p>
+        <form id="contact-form" action="https://formspree.io/f/xpqjbrbv" method="POST">
+          <input type="text" name="name" placeholder="이름 / 회사명" required />
+          <input type="email" name="email" placeholder="이메일" required />
+          <select name="inquiry_type">
+            <option value="" disabled selected>문의 유형 선택</option>
+            <option value="partnership">비즈니스 제휴</option>
+            <option value="advertising">광고 문의</option>
+            <option value="feedback">사이트 피드백</option>
+            <option value="other">기타</option>
+          </select>
+          <textarea name="message" placeholder="문의 내용을 입력해주세요" rows="5" required></textarea>
+          <button type="submit" id="submit-btn" class="btn-primary">문의 보내기</button>
+        </form>
+        <p id="form-status" class="form-status"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="./">홈</a>
+        <a href="./about.html">사이트 소개</a>
+        <a href="./privacy.html">개인정보처리방침</a>
+        <a href="#contact">문의하기</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 ShowPang. All rights reserved.</p>
+      <p class="footer-disclaimer">본 사이트는 로또 당첨을 보장하지 않으며, 오락 및 정보 제공 목적으로 운영됩니다. 복권 구매는 개인의 판단과 책임 하에 이루어져야 합니다.</p>
+    </div>
+  </footer>
+
   <script defer type="text/javascript" src="./main.js"></script>
 </body>
 </html>
