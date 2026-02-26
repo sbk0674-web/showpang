@@ -69,6 +69,35 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.textContent = next === 'light' ? '☀️' : '🌙';
   });
 
+  // Contact form
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    formStatus.textContent = '전송 중...';
+    formStatus.className = 'form-status';
+
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        formStatus.textContent = '문의가 전송되었습니다!';
+        formStatus.className = 'form-status success';
+        contactForm.reset();
+      } else {
+        formStatus.textContent = '전송에 실패했습니다. 다시 시도해주세요.';
+        formStatus.className = 'form-status error';
+      }
+    } catch {
+      formStatus.textContent = '네트워크 오류가 발생했습니다.';
+      formStatus.className = 'form-status error';
+    }
+  });
+
   // Lotto generator
   generateButton.addEventListener('click', () => {
     lottoBallsContainer.innerHTML = '';
