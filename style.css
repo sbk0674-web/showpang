@@ -7,7 +7,18 @@
   --button-bg: #ff4081;
   --button-hover-bg: #f50057;
   --container-bg: rgba(255, 255, 255, 0.1);
+  --container-border: rgba(255, 255, 255, 0.2);
   --font-family: 'Poppins', sans-serif;
+}
+
+[data-theme="light"] {
+  --background-start: #e0e7ff;
+  --background-end: #f0f4ff;
+  --text-color: #1a1a2e;
+  --button-bg: #6a11cb;
+  --button-hover-bg: #4a0e8f;
+  --container-bg: rgba(255, 255, 255, 0.7);
+  --container-border: rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -20,6 +31,7 @@ body {
   height: 100vh;
   margin: 0;
   text-align: center;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 .container {
@@ -27,8 +39,9 @@ body {
   padding: 3rem 4rem;
   border-radius: 15px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--container-border);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: background 0.4s ease, border-color 0.4s ease;
 }
 
 h1 {
@@ -48,7 +61,7 @@ h1 {
 button {
   font-family: var(--font-family);
   background-color: var(--button-bg);
-  color: var(--text-color);
+  color: #ffffff;
   border: none;
   padding: 1rem 2rem;
   border-radius: 50px;
@@ -64,16 +77,39 @@ button:hover {
 }
 
 button:active {
-    transform: translateY(0);
+  transform: translateY(0);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--container-bg);
+  border: 1px solid var(--container-border);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px) rotate(15deg);
 }
 
 lotto-ball {
-  display: inline-block;
+  display: inline-flex;
   width: 60px;
   height: 60px;
   border-radius: 50%;
   color: white;
-  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
